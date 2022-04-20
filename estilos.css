@@ -1,0 +1,35 @@
+
+/*RESET DE CSS
+elimina todos los estilos predeterminados del navegador
+* es el llamado selector universal de todas las etiquetas de html
+*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: aquamarine;
+}
+
+.cabecera,
+.contenido {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cabecera {
+    background-color: tomato;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenido {
+    background-color: chocolate;
+}
+
