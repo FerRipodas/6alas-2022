@@ -9,11 +9,28 @@ elimina todos los estilos predeterminados del navegador
     box-sizing: border-box;
 }
 
+/*declaramos la variable en la raiz del documento para poder usarlas en todo el proyecto*/
+:root {
+    /*Nombramos a las varialbles con --nombre y les asignamos un valor*/
+    --naranja: #f90;
+    --negro: #000;
+    --grisOscuro: #333;
+    --blanco: #fff;
+}
 
 
 body {
-    background-color: aquamarine;
+    /*Para usar la variable se usa "var" y entre () en nombre de la variable c on ---*/
+    background-color: var(--grisOscuro);
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("images/pattern.jpg");
 }
+
+
+
+
+
+/*---------CABECERA-------------*/
 
 .cabecera,
 .contenido {
@@ -27,7 +44,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+.titcabe {
+    color: var(--naranja);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+
+/*---------CABECERA-------------*/
 
 .contenido {
     background-color: chocolate;
