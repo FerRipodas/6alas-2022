@@ -26,7 +26,13 @@ body {
     background-image: url("images/pattern.jpg");
 }
 
+a {
+        text-decoration: none;
+}
 
+ul {
+    list-style: none ;
+}
 
 
 
@@ -62,3 +68,42 @@ body {
     background-color: chocolate;
 }
 
+.nav {
+    background-color: azure;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 16px;
+    padding-left: 40;
+}
+
+.nav-lista {
+    background-color: olive;
+    display: flex;
+}
+
+.nav-lista_item {
+    background-color: orangered;
+}
+
+.nav-lista_item-link {
+    background-color: aquamarine;
+    text-decoration: none;
+    border-right: 1px solid purple;
+    padding: 4px 12px;
+    display: block;
+}
+
+.nav-lista_item-link:hover {
+    background-color: darkgoldenrod;
+}
+
+.nav-form {
+    background-color: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
