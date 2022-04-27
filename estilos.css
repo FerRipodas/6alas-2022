@@ -1,42 +1,51 @@
+/* Reset de CSS
+    eliminan algunos o TODOS los estilos predeterminados del navegador
 
-/*RESET DE CSS
-elimina todos los estilos predeterminados del navegador
-* es el llamado selector universal de todas las etiquetas de html
+    Otros reset:
+    1. El famoso de Eric Meyer: https://meyerweb.com/eric/tools/css/reset/
+    2. El "moderno": https://piccalil.li/blog/a-modern-css-reset/
+
+    * es un selector universal, selecciona a todas las etiquetas del HTML
 */
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/*declaramos la variable en la raiz del documento para poder usarlas en todo el proyecto*/
+/* Declaramos la variables en la raíz del documento para poder usarlas en todo el proyecto */
 :root {
-    /*Nombramos a las varialbles con --nombre y les asignamos un valor*/
-    --naranja: #f90;
+    /* Nombramos a las variables con --nombre y les asignamos un valor */
+    --naranja: #F90;
     --negro: #000;
     --grisOscuro: #333;
     --blanco: #fff;
 }
 
-
 body {
-    /*Para usar la variable se usa "var" y entre () en nombre de la variable c on ---*/
-    background-color: var(--grisOscuro);
-    font-family: Arial, Helvetica, sans-serif;
+    /* background-image necesita la ruta de la imagen
+        de manera automática repite la imagen en todo el sitio
+
+        si quiero que no se repita uso background-repeat:
+            - no-repeat: no se repite, queda en esquina superior izquierda
+            - repeat-x: eje x solamente
+            - repeat-y: eje y solamente
+
+        si quiero que cubra todo el fondo sin romper proporción
+            background-size: cover;
+    */
     background-image: url("images/pattern.jpg");
-}
-
-a {
-        text-decoration: none;
-}
-
-ul {
-    list-style: none ;
+    /* Para usar la variable se usa la palabra mágica "var" y entre () el nombre de la variable con -- */
+    background-color: var(--grisOscuro);
+    /* Este font-family se aplicará a toda la página */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 
-/*---------CABECERA-------------*/
+/*
+    ------------ CABECERA ------------
+*/
 
 .cabecera,
 .contenido {
@@ -46,7 +55,7 @@ ul {
 }
 
 .cabecera {
-    background-color: tomato;
+    /* background-color: tomato; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,56 +63,107 @@ ul {
     padding-bottom: 10px;
 }
 
-.titcabe {
+.cabecera-titulo {
     color: var(--naranja);
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 
 
 
-/*---------CABECERA-------------*/
+/*
+    ------------ CONTENIDO ------------
+*/
 
 .contenido {
-    background-color: chocolate;
+    background-color: var(--blanco);
 }
 
+
+
+
+/*
+    ------------ NAVEGACIÓN ------------
+*/
+
 .nav {
-    background-color: azure;
-    font-size: 20px;
-    font-weight: bold;
+    background-color: var(--naranja);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
-    padding: 16px;
-    padding-left: 40;
+    margin-bottom: 40;
 }
 
 .nav-lista {
-    background-color: olive;
+    /* background-color: olive; */
+    flex-grow: 1;
+    list-style: none;
     display: flex;
 }
 
-.nav-lista_item {
+/* .nav-lista_item {
     background-color: orangered;
-}
+} */
 
 .nav-lista_item-link {
-    background-color: aquamarine;
-    text-decoration: none;
+    /* background-color: aquamarine; */
     border-right: 1px solid purple;
-    padding: 4px 12px;
     display: block;
+    /*
+        5px corresponde a top y bottom
+        12px corresponde a right y left
+    */
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--blanco);
 }
-
 .nav-lista_item-link:hover {
-    background-color: darkgoldenrod;
+    /* background-color: darkorange; */
+    text-decoration: underline;
 }
 
-.nav-form {
+/* .nav-form {
     background-color: darkblue;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+} */
+
+
+.slider {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/*PRINCIPAL-----------------*/
+
+.principal {
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    }
+
+.categorias {
+    background-color: tomato;
+    padding: 40px;
+}
+
+.productos {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+    gap: 24px;
+}
+
+.lamparas {
+    padding: 20px;
+}
+
+.lampara-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+h2 {
+    margin-bottom: 15px;
 }
